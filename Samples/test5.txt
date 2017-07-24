@@ -1,0 +1,15 @@
+entero base,expo,pot
+funcion potencia(entero b , entero e): entero entero i, resp
+inicio
+      resp<-1
+      para i <- 1 hasta e haga
+            resp <- resp * b
+      fin para
+      retorne resp
+fin
+
+inicio
+    
+      pot<-potencia(2,3)
+      escriba "Potencia es ", pot
+fin

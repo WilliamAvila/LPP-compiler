@@ -1,0 +1,23 @@
+registro reg_alumno
+      cadena[30] nombre
+      entero cuenta
+      cadena[30] carrera
+fin registro
+registro reg_otro
+      cadena[30] nombre
+      entero cuenta
+      cadena[30] carrera
+fin registro
+entero km,hrs,operacion
+cadena[15] nombre, apellido
+inicio
+km<-160
+hrs<-5
+reg_alumno.cuenta<-21111224
+operacion<-km/hrs
+nombre<-"william"
+apellido<-"Avila"
+reg_otro.nombre<-"otro"
+escriba reg_otro.nombre, "\n"
+escriba "la velocidad del auto por hora fue : " , operacion ," ", nombre, " ", apellido, " ", reg_alumno.cuenta 
+fin

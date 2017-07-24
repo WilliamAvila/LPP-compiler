@@ -1,0 +1,16 @@
+entero division, num1 , num2
+inicio
+num1 <- 2
+
+caso num1
+1:
+    escriba "Es 2"
+5, 3, 4:
+    escriba "Es 2 3 o 4"
+5:
+    escriba "Es 5"
+sino:
+    escriba "NO es mi numero"
+fin caso
+
+fin

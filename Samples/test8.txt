@@ -1,0 +1,15 @@
+arreglo[5,4] de entero numero
+
+funcion Potencia(entero base , entero expo): entero entero i, resp
+inicio
+      resp<-1
+      para i <- 1 hasta expo haga
+            resp <- resp * base
+          
+      fin para
+      retorne resp
+fin
+inicio
+      
+      escriba "Potencia es ", Potencia(2,5)
+fin

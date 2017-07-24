@@ -1,0 +1,6 @@
+real val_prod, val_productodegan,operacion
+inicio escriba "ingrese el valor del producto original: "
+lea val_prod
+operacion<-val_prod+(val_prod*30)/100
+escriba "el comprador vedio o va avender su producto por un valor de : " , operacion
+fin

@@ -1,0 +1,25 @@
+ entero base,expo,pot,pot1,pot2,i
+ inicio    
+     base<- 2
+     expo<- 3
+     i <- 0
+     pot <- 1
+     pot1 <- 1
+     pot2 <- 1
+     mientras i <  expo haga
+            pot <- pot * base
+            i <- i + 1
+     fin mientras
+
+     para i <- 1 hasta expo haga
+            pot1 <- pot1 * base
+     fin para
+     
+     i <- 0
+     repita
+            pot2 <- pot2 * base
+            i <- i + 1
+      hasta (i<expo) 
+
+    escriba "Pot: ",pot, " Pot1: ", pot1, " Pot 2: ", pot2
+fin

@@ -1,0 +1,12 @@
+arreglo[10] de entero numero
+entero I
+
+inicio
+    para I<-0 hasta 9 haga
+       numero[I]<- I
+       escriba numero[I],"\n"
+    fin para
+
+
+
+fin

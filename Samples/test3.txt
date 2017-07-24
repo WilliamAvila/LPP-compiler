@@ -1,0 +1,12 @@
+entero division, num1 , num2
+inicio
+num1 <- 5
+num2 <- 0
+si num2=0 entonces
+escriba "operacion indefinida"
+sino
+si num2>0 entonces
+escriba  "operacion definida  "
+fin si 
+fin si
+fin
