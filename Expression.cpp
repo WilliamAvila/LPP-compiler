@@ -112,7 +112,7 @@ VValue IdExpression::Evaluate() {
                 return mTable[MethodName]->LTable[id];
             }
         }
-        printf("Variable %s is not declared\n", id.c_str());
+        printf("Variable %s no ha sido declarada\n", id.c_str());
         exit(0);
     }
 
@@ -122,7 +122,7 @@ VValue IdExpression::Evaluate() {
 VValue RegisterIdExpression::Evaluate() {
     
     if (sTable.find(regId) == sTable.end()) {
-        printf("Variable %s is not declared\n", id.c_str());
+        printf("Variable %s no ha sido declarada\n", id.c_str());
         exit(0);
     }
 
@@ -133,7 +133,7 @@ VValue MethodExpression::Evaluate() {
     string previous=MethodName;
     
     if (mTable.find(id) == mTable.end()) {
-        printf("\nThere is not a method \"%s\"\n", id.c_str());
+        printf("\nNo hay un metodo \"%s\"\n", id.c_str());
         exit(0);
     }
     
@@ -163,7 +163,7 @@ VValue MethodExpression::Evaluate() {
         VValue v = (*it2);
         Param * p = *it3;
         if (v.type != p->type) {
-            printf("Expected %s type.\n", getTextForEnum(p->type).c_str());
+            printf("Se esperaba tipo %s.\n", getTextForEnum(p->type).c_str());
             exit(0);
         }
         m->LTable[p->id] = v;
@@ -198,7 +198,7 @@ VValue ArrayExpression::Evaluate() {
                 return mTable[MethodName]->LTable[id];
             }
         }
-        printf("Variable %s is not declared\n", id.c_str());
+        printf("Variable %s no ha sido declarada\n", id.c_str());
         exit(0);
     }
     VValue v=sTable[id];
@@ -228,7 +228,7 @@ void Declaration::Execute() {
         DeclItem *id = *it;
         
         if (sTable.find(id->id) != sTable.end()) {
-            printf("Variable %s is already declared\n", id->id.c_str());
+            printf("Variable %s ya ha sido declarada\n", id->id.c_str());
             exit(0);
         }
         if (dim  > 0) {
@@ -309,7 +309,7 @@ void PrintStatement::Execute() {
                     printf("\\");
                     i++;
                 } else if(s.at(i) == '\\' && i + 1 < s.size()){
-                    printf("unknown escape character. \n");
+                    printf("Caracter de escape desconocido. \n");
                     exit(0);
                 }else{
                     printf("%c", s.at(i));
@@ -318,9 +318,9 @@ void PrintStatement::Execute() {
             }
         } else if (result.type == BOOLEAN) {
             if(result.isArray==1){
-                printf("%s", result.getBoolArrayValue()?"True":"False");
+                printf("%s", result.getBoolArrayValue()?"Verdadero":"Falso");
             }else{
-                printf("%s", result.BoolValue()?"True":"False");
+                printf("%s", result.BoolValue()?"Verdadero":"Falso");
             }
         } else if (result.type == CHARACTER) {
             printf("%c", result.CharValue());
@@ -340,11 +340,11 @@ void ReadStatement::Execute() {
                 if (mTable[MethodName]->LTable.find(id->id) != mTable[MethodName]->LTable.end()) {
                     method=true;
                 }else{
-                    printf("Variable %s is not declared\n", id->id.c_str());
+                    printf("Variable %s no ha sido declarada\n", id->id.c_str());
                     exit(0);
                 }
             }else{
-                printf("Variable %s is not declared\n", id->id.c_str());
+                printf("Variable %s no ha sido declarada\n", id->id.c_str());
                 exit(0);
             }
         }
@@ -372,11 +372,11 @@ void AssignStatement::Execute() {
                 var= mTable[MethodName]->LTable[id];
                 //method=true;
             }else{
-                printf("Variable %s is not declared\n", id.c_str());
+                printf("Variable %s no ha sido declarada\n", id.c_str());
                 exit(0);
             }
         }else{
-            printf("Variable %s is not declared\n", id.c_str());
+            printf("Variable %s no ha sido declarada\n", id.c_str());
             exit(0);
         }
     }else{
@@ -392,7 +392,7 @@ void AssignStatement::Execute() {
     if(var.isArray==1){
          
         if(dim==0){
-            printf("%s is an Array",id.c_str());
+            printf("%s es un Arreglo",id.c_str());
             exit(0);
         }
         int d=dim->Evaluate().IntValue();
@@ -408,7 +408,7 @@ void AssignStatement::Execute() {
         }
     }else{
         if(var.type!=result.type){
-            printf("Incompatible types.\n");
+            printf("Tipos incompatibles.\n");
             exit(0);
         }
               
@@ -425,7 +425,7 @@ void AssignStatement::Execute() {
 void AssignRegisterStatement::Execute() {
  
      if (sTable.find(id) == sTable.end()) {
-        printf("Variable %s is not declared\n", id.c_str());
+        printf("Variable %s no ha sido declarada\n", id.c_str());
      }else{
         VValue result = expr->Evaluate();
          (sTable[id]).u.registro->variables[registerVar] = result;
@@ -582,7 +582,7 @@ void MethodStatement::Execute() {
     string previous=MethodName;
     
     if (mTable.find(id) == mTable.end()) {
-        printf("\nThere is not a method \"%s\"\n", id.c_str());
+        printf("\nNo hay un metodo \"%s\"\n", id.c_str());
         exit(0);
     }
     
@@ -612,7 +612,7 @@ void MethodStatement::Execute() {
         VValue v = (*it2);
         Param * p = *it3;
         if (v.type != p->type) {
-            printf("Expected %s type.\n", getTextForEnum(p->type).c_str());
+            printf("Se esperaba tipo %s.\n", getTextForEnum(p->type).c_str());
             exit(0);
         }
         m->LTable[p->id] = v;
@@ -639,11 +639,11 @@ void MethodStatement::Execute() {
 
 void Method::Execute() {
     if (mTable.find(id) != mTable.end()) {
-        printf("there is already a method with that name \"%s\"\n", id.c_str());
+        printf("Ya Existe un metodo llamado \"%s\"\n", id.c_str());
         exit(0);
     }
     if(id.find(string("main"))!=string::npos && params.size()>0){
-        printf("main Method can't have params.\n");
+        printf("metodo main no puede tener parametros.\n");
         exit(0);
     }
     
@@ -652,7 +652,7 @@ void Method::Execute() {
     while (it3 != this->params.end()) {
         Param *s = *it3;
         if ( sTable.find(s->id) != sTable.end() || LTable.find(s->id) != LTable.end()) {
-                printf("Variables \"%s\" already exist.\n", s->id.c_str());
+                printf("Variable \"%s\" ya existe.\n", s->id.c_str());
                 exit(0);
         }
         VValue v;
@@ -674,7 +674,7 @@ void Method::Execute() {
         while (it2 != d->ids.end()) {
             DeclItem *s = *it2;
             if ( sTable.find(s->id) != sTable.end() || LTable.find(s->id) != LTable.end()) {
-                printf("Variables \"%s\" already exist.\n", s->id.c_str());
+                printf("Variable \"%s\" ya existe.\n", s->id.c_str());
                 exit(0);
             }
             VValue v;
