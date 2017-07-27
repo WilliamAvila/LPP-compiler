@@ -7,7 +7,6 @@
 #include "Utils.h"
 #include "Expression.h"
 #include "tokens.h"
-#include <editline/readline.h>
 
 using namespace std;
 extern int line;
