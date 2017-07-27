@@ -2,7 +2,7 @@
 ## Getting Started
 
 1.First you need to install the dependencies
-* [flex](https://www.gnu.org/software/flex/) on Ubuntu 16.04 run `sudo apt install flex` or on MAC OSX you can install it with [homebrew](https://brew.sh/) running `brew install flex`
+* [**flex**](https://www.gnu.org/software/flex/) on Ubuntu 16.04 run `sudo apt install flex` or on MAC OSX you can install it with [homebrew](https://brew.sh/) running `brew install flex`
 
 * [**lemon**](http://www.hwaci.com/sw/lemon/) to compile it run `gcc lemon.c -o lemon`
 
