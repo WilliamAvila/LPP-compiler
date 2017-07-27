@@ -9,6 +9,7 @@
 #include <iostream>
 #include <sstream>
 #include <math.h>
+#include <stdio.h>
 
 using namespace std;
 extern map<string, int> vars;
