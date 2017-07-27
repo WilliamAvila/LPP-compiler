@@ -7,3 +7,5 @@
 3.Create the executable running the MAKEFILE with `make`
 
 4.Run the samples with `./expr < samples/test1.txt`
+
+If you want remove all the generated files run `make clean`
