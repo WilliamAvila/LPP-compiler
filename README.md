@@ -6,4 +6,4 @@
 
 3.Create the executable running the MAKEFILE with `make`
 
-4.Run the samples with `./expr < test1.txt`
+4.Run the samples with `./expr < samples/test1.txt`
