@@ -24,7 +24,7 @@ ${TARGET}_p.o: ${TARGET}_p.cpp
 	g++ -c -o $@ $<
 
 ${TARGET}_p.cpp: expr.y
-	lemon -p -Tlempar.c $<
+	./lemon -p -Tlempar.c $<
 	mv ${TARGET}.c $@
 	mv ${TARGET}.h tokens.h
 
