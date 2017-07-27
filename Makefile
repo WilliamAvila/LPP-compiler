@@ -39,3 +39,5 @@ clean:
 	rm -f ${TARGET}.out
 	rm -f ${TARGET}.c
 	rm -f ${TARGET}.h
+test:
+	./expr < samples/test1.txt
