@@ -8,4 +8,6 @@
 
 4.Run the samples with `./expr < samples/test1.txt`
 
+To run the test 1 run `make test`
 If you want remove all the generated files run `make clean`
+
