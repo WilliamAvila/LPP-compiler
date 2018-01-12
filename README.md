@@ -6,6 +6,8 @@
 
 * [**lemon**](http://www.hwaci.com/sw/lemon/) to compile it run `gcc lemon.c -o lemon`
 
+* **g++** install it with `apt install g++`
+
 2.Create the executable running the Makefile with `make`
 
 3.Run the samples with `./expr < samples/test1.txt`
